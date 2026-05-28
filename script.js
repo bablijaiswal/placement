@@ -63,3 +63,80 @@ products.forEach((item)=>{
 
   `;
 });
+/* =========================
+SLIDER
+========================= */
+
+const heroImage = document.querySelector(".hero-image");
+
+const slideText = document.getElementById("slide-text");
+
+const leftArrow = document.querySelector(".left-arrow");
+
+const rightArrow = document.querySelector(".right-arrow");
+
+
+
+const slides = [
+
+  {
+    color:"#4b8df0",
+    text:"1920 x 1080"
+  },
+
+  {
+    color: "#46628bff",
+    text:"SECOND SLIDE"
+  },
+
+  {
+    color: "#9abef5ff",
+    text:"THIRD SLIDE"
+  }
+
+];
+
+
+
+let currentSlide = 0;
+
+
+
+function showSlide(index){
+
+  heroImage.style.background = slides[index].color;
+
+  slideText.innerText = slides[index].text;
+}
+
+
+
+/* RIGHT ARROW */
+
+rightArrow.addEventListener("click", ()=>{
+
+  currentSlide++;
+
+  if(currentSlide >= slides.length){
+
+    currentSlide = 0;
+  }
+
+  showSlide(currentSlide);
+});
+
+
+
+/* LEFT ARROW */
+
+leftArrow.addEventListener("click", ()=>{
+
+  currentSlide--;
+
+  if(currentSlide < 0){
+
+    currentSlide = slides.length - 1;
+  }
+
+  showSlide(currentSlide);
+});
