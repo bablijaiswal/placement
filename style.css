@@ -6,109 +6,139 @@
 
 body{
   background:#f3f3f3;
-
-  font-family:Arial, sans-serif;
+  font-family:Arial,sans-serif;
 }
 
-.hero{
 
+
+/* HERO */
+
+.hero{
   width:100%;
-  position: relative;
+  position:relative;
 }
 
 .hero-image{
-
   width:100%;
-
   height:800px;
-
   background:#4b8df0;
 
   display:flex;
-
   justify-content:center;
-
   align-items:center;
+
+  position:relative;
 }
 
-.hero-image h1{
 
-  font-size:120px;
+/* ARROWS */
 
-  font-weight:bold;
+.left-arrow,
+.right-arrow{
+  position:absolute;
+  top:50%;
+  transform:translateY(-50%);
+
+  background:none;
+  border:none;
+
+  color:white;
+  font-size:60px;
+
+  cursor:pointer;
 }
+
+.left-arrow{
+  left:15px;
+}
+
+.right-arrow{
+  right:15px;
+}
+
+
+
+/* HERO CONTENT */
 
 .hero-content{
-
   width:100%;
-
   height:278px;
 
   background:#0d2a45;
-
   color:white;
 
   padding:40px 50px;
 
-  display:flex;
-
-  flex-direction:column;
-
-  justify-content:center;
-
-  align-items:flex-start;
-
-  text-align:left;
   position:relative;
-  gap:12px;
 }
 
-
 .hero-content small{
-
   font-size:11px;
-
   color:#d7d7d7;
 }
 
 .hero-content h2{
-
   font-size:58px;
-
   font-weight:500;
 
-  line-height:1.1;
+  margin:10px 0;
 }
 
 .hero-content p{
-
   width:650px;
 
   font-size:13px;
-
   line-height:1.6;
 
   color:#d7d7d7;
+
+  margin-bottom:20px;
 }
 
-.slider-dots{
 
+
+/* BUTTONS */
+
+.buttons{
+  display:flex;
+  gap:10px;
+}
+
+.buttons a{
+  padding:10px 18px;
+
+  text-decoration:none;
+  font-size:12px;
+}
+
+.btn1{
+  background:white;
+  color:black;
+}
+
+.btn2{
+  border:1px solid white;
+  color:white;
+}
+
+
+
+/* DOTS */
+
+.slider-dots{
   position:absolute;
 
   bottom:10px;
-
   left:50%;
 
   transform:translateX(-50%);
 
   display:flex;
-
   gap:8px;
 }
+
 .slider-dots span{
-
   width:6px;
-
   height:6px;
 
   border-radius:50%;
@@ -118,58 +148,28 @@ body{
   opacity:0.7;
 }
 
-/* BUTTONS */
 
-.buttons{
 
-  display:flex;
+/* HEADING */
 
-  gap:10px;
-}
-
-.buttons button{
-
-  padding:10px 18px;
-
-  font-size:12px;
-
-  cursor:pointer;
-}
-
-.buttons button:first-child{
-
-  background:white;
-
-  border:none;
-}
-
-.buttons button:last-child{
-
-  background:transparent;
-
-  border:1px solid white;
-
-  color:white;
-}
 .heading{
-
   width:100%;
 
   text-align:center;
 
   padding:40px 0;
-
-  background:#f3f3f3;
 }
 
 .heading h2{
-
   font-size:42px;
-
   font-weight:500;
 }
-.products{
 
+
+
+/* PRODUCTS */
+
+.products{
   width:99%;
 
   margin:auto;
@@ -183,123 +183,143 @@ body{
   padding-bottom:30px;
 }
 
-.card{
 
+
+/* CARD */
+
+.card{
   background:white;
 }
 
 .card-image{
-
   height:620px;
 
   background:#52994B;
 
   display:flex;
-
   justify-content:center;
-
   align-items:center;
 }
 
 .card-content{
-
   padding:8px;
 }
 
 .card-content p{
-
   font-size:10px;
-
   color:gray;
 }
 
 .card-content h4{
-
   font-size:12px;
-
   margin:4px 0;
 }
 
 .price{
-
   display:flex;
-
   justify-content:space-between;
 }
 
 .price span,
 .price del{
-
   font-size:10px;
 }
+
+
+
+/* =========================
+TABLET
+========================= */
+
+@media(max-width:992px){
+
+  .hero-image{
+    height:500px;
+  }
+
+  .hero-image h1{
+    font-size:70px;
+  }
+
+  .hero-content{
+    height:auto;
+    padding:30px;
+  }
+
+  .hero-content h2{
+    font-size:42px;
+  }
+
+  .hero-content p{
+    width:100%;
+  }
+
+  .products{
+    width:95%;
+
+    grid-template-columns:repeat(2,1fr);
+
+    gap:10px;
+  }
+
+  .card-image{
+    height:450px;
+  }
+
+}
+
+
+
+/* =========================
+MOBILE
+========================= */
 
 @media(max-width:600px){
 
   .hero-image{
-
-    height:300px;
+    height:220px;
   }
 
   .hero-image h1{
-
     font-size:55px;
-
     text-align:center;
   }
 
   .hero-content{
-
     height:auto;
-
-    padding:18px;
+    padding:14px;
   }
 
   .hero-content h2{
-
     font-size:28px;
   }
 
   .hero-content p{
-
     width:100%;
 
     font-size:11px;
-
     line-height:1.5;
   }
 
   .buttons{
-
     gap:8px;
   }
 
-  .buttons button{
-
+  .buttons a{
     padding:8px 14px;
-
     font-size:10px;
   }
 
-  .slider-dots{
-
-    bottom:8px;
-  }
-
   .heading{
-
     padding:25px 0;
   }
 
   .heading h2{
-
     font-size:22px;
   }
 
   .products{
-
     width:95%;
-
-    margin:auto;
 
     grid-template-columns:repeat(2,1fr);
 
@@ -307,32 +327,25 @@ body{
   }
 
   .card-image{
-
-    height:250px;
-
+    height:170px;
     font-size:28px;
   }
 
   .card-content{
-
     padding:5px;
   }
 
   .card-content p{
-
     font-size:7px;
   }
 
   .card-content h4{
-
     font-size:9px;
-
     margin:2px 0;
   }
 
   .price span,
   .price del{
-
     font-size:7px;
   }
 
